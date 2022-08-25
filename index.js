@@ -33,7 +33,7 @@ app.post("/order", async (req, res) => {
   res.status(201).json({
     success: true,
     amount,
-    order, myOrder
+    order: myOrder
   });
 });
 
