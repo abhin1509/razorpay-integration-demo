@@ -29,7 +29,11 @@
           body: JSON.stringify({ amount: 500 }),
         });
 
-        const { order } = response;
+        //fix error: cannot read properties of undefined 'id'
+        const convertResponse = await response.json();
+
+        const { order } = convertResponse;
+
         var options = {
           key: "rzp_test_Tk9cfQFrftiyIy", // Enter the Key ID generated from the Dashboard
           amount: "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
